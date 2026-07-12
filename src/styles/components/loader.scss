@@ -299,8 +299,8 @@
 }
 
 .flower--tl {
-  top: 0;
-  left: 0;
+ top:20px;
+  left:-10px
 }
 
 .flower--br {
@@ -309,14 +309,16 @@
 }
 
 .flower--bl {
-  bottom: 0;
+  bottom:15px;
+
   left: 0;
   width: 460px;
   transform: translate(-10%, 10%);
 }
 
 .flower--tr {
-  bottom: 0;
+  bottom:15px;
+
   right: 0;
   width: 460px;
   transform: translate(10%, 10%);
@@ -324,7 +326,7 @@
 }
 
 .flower--bc {
-  bottom: -76px;
+  bottom:-10px;
   left: 50%;
   transform: translateX(-50%);
   width: 500px;
@@ -332,8 +334,8 @@
 }
 
 .flower--far-tr {
-  top: -42px;
-  right: -12px;
+top:10px;
+  right:-10px;
 
   width: 120px;        
   opacity: 0.35;        /* más transparente */
