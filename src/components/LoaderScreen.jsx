@@ -84,7 +84,7 @@ export default function LoaderScreen({ onEnter }) {
         <div className="loader__card">
 
           <p className="loader__top">
-            ESTÁS INVITADO A CELEBRAR7
+            ESTÁS INVITADO A CELEBRAR
           </p>
 
           <h2 className="loader__mis">MIS</h2>
