@@ -21,13 +21,29 @@ export default function LoaderScreen({ onEnter }) {
         className="loader__bg-img"
       />
 
+      <div className="stars">
+  {Array.from({ length: 70 }).map((_, i) => (
+    <span
+      key={i}
+      style={{
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 5}s`,
+        animationDuration: `${2 + Math.random() * 4}s`,
+        transform: `scale(${0.4 + Math.random()})`
+      }}
+    />
+  ))}
+</div>
+
+
       <div className="loader__overlay"></div>
 
       <img src="/images/flower-top-left.png" className="flower flower--tl" />
       <img src="/images/flower-top-right.png" className="flower flower--br" />
    
       <img src="/images/flower-bottom-left.png" className="flower flower--bl" />
-      <img src="/images/flower-bottom-center.png" className="flower flower--bc" />
+      {/* <img src="/images/flower-bottom-center.png" className="flower flower--bc" /> */}
       <img src="/images/flower-bottom-right.png" className="flower flower--tr" />
       <img src="/images/flower-top-right.png" className="flower flower--far-tr" />
 
@@ -49,6 +65,20 @@ export default function LoaderScreen({ onEnter }) {
           />
         ))}
       </div>
+
+      <div className="gold-particles">
+  {Array.from({ length: 18 }).map((_, i) => (
+    <span
+      key={i}
+      style={{
+        left: `${10 + Math.random() * 80}%`,
+        top: `${15 + Math.random() * 70}%`,
+        animationDelay: `${Math.random() * 6}s`,
+        animationDuration: `${5 + Math.random() * 4}s`
+      }}
+    />
+  ))}
+</div>
 
       <div className="envelope__content">
         <div className="loader__card">
