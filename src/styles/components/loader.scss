@@ -175,7 +175,8 @@
 
   justify-content:center;
   align-items:center;
-  margin-top: clamp(26px, 13vh, 120px);
+  // margin-top: clamp(26px, 13vh, 120px);
+  margin-top: clamp(40px, 13vh, 120px);
 }
 
 /* animación */
@@ -553,15 +554,26 @@ transform:scale(1.4);
 
   }
 
-  .loader__card{
+ .loader__card{
+  position: relative;
 
-    width:85%;
+  width: min(88vw, 340px);
+  min-height: 500px;
 
-    min-height:500px;
+  padding: 45px 20px 80px;
 
-    padding:45px 20px 80px;
+  border-radius: 30px;
 
-  }
+  text-align: center;
+
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,.08), transparent),
+    linear-gradient(180deg,#0f1f3d,#0a142b);
+
+  border:2px solid rgba(212,175,55,.7);
+
+  box-shadow:0 25px 60px rgba(0,0,0,.8);
+}
 
   .loader__xv{
     font-size:3rem;
@@ -599,7 +611,8 @@ transform:scale(1.4);
 
   .card-stand{
 
-    width:443px;
+    // width:443px;
+    width: min(112vw, 443px);
     bottom:-25px;
 
   }
