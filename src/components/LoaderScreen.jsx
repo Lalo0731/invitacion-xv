@@ -13,45 +13,37 @@ export default function LoaderScreen({ onEnter }) {
 
   return (
     <div className={`loader ${closing ? "loader--exit" : ""}`}>
-
       <img
-        src="/images/fondo.png"
-        // src="/images/image.png"
-        alt="fondo"
-        className="loader__bg-img"
-      />
+        src="/images/fondo.png" alt="fondo" className="loader__bg-img"/>
 
-      <div className="stars">
-  {Array.from({ length: 70 }).map((_, i) => (
-    <span
-      key={i}
-      style={{
-        left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 5}s`,
-        animationDuration: `${2 + Math.random() * 4}s`,
-        transform: `scale(${0.4 + Math.random()})`
-      }}
-    />
-  ))}
-</div>
-
+      <div className="loader__stars">
+        {Array.from({ length: 70 }).map((_, i) => (
+          <span
+            key={i}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${2 + Math.random() * 4}s`,
+              transform: `scale(${0.4 + Math.random()})`
+            }}
+          />
+        ))}
+      </div>
 
       <div className="loader__overlay"></div>
 
-      <img src="/images/flower-top-left.png" className="flower flower--tl" />
-      <img src="/images/flower-top-right.png" className="flower flower--br" />
-   
-      <img src="/images/flower-bottom-left.png" className="flower flower--bl" />
-      {/* <img src="/images/flower-bottom-center.png" className="flower flower--bc" /> */}
-      <img src="/images/flower-bottom-right.png" className="flower flower--tr" />
-      <img src="/images/flower-top-right.png" className="flower flower--far-tr" />
+      <img src="/images/flower-top-left.png" className="loader__flower loader__flower--tl" />
+      <img src="/images/flower-top-right.png" className="loader__flower loader__flower--br" />
+      <img src="/images/flower-bottom-left.png" className="loader__flower loader__flower--bl" />
+      <img src="/images/flower-bottom-right.png" className="loader__flower loader__flower--tr" />
+      <img src="/images/flower-top-right.png" className="loader__flower loader__flower--far-tr" />
 
-      <div className="envelope">
-        <div className="envelope__flap"></div>
+      <div className="loader__envelope">
+        <div className="loader__flap"></div>
       </div>
 
-      <div className="petals">
+      <div className="loader__petals">
         {Array.from({ length: 20 }).map((_, i) => (
           <img
             key={i}
@@ -66,21 +58,21 @@ export default function LoaderScreen({ onEnter }) {
         ))}
       </div>
 
-      <div className="gold-particles">
-  {Array.from({ length: 18 }).map((_, i) => (
-    <span
-      key={i}
-      style={{
-        left: `${10 + Math.random() * 80}%`,
-        top: `${15 + Math.random() * 70}%`,
-        animationDelay: `${Math.random() * 6}s`,
-        animationDuration: `${5 + Math.random() * 4}s`
-      }}
-    />
-  ))}
-</div>
+      <div className="loader__gold-particles">
+        {Array.from({ length: 18 }).map((_, i) => (
+          <span
+            key={i}
+            style={{
+              left: `${10 + Math.random() * 80}%`,
+              top: `${15 + Math.random() * 70}%`,
+              animationDelay: `${Math.random() * 6}s`,
+              animationDuration: `${5 + Math.random() * 4}s`
+            }}
+          />
+        ))}
+      </div>
 
-      <div className="envelope__content">
+      <div className="loader__content">
         <div className="loader__card">
 
           <p className="loader__top">
@@ -105,55 +97,49 @@ export default function LoaderScreen({ onEnter }) {
 
         </div>
         
-<div className="card-stand">
-  <div className="triangles"></div>
-  <svg viewBox="0 0 400 140" xmlns="http://www.w3.org/2000/svg">
-    
-  
-    <path
-      d="
-        M40,80
-        Q100,30 160,70
-        Q200,100 240,70
-        Q300,30 360,80
-        L360,120
-        Q200,160 40,120
-        Z
-      "
-      fill="#000"
-    />
+        <div className="loader__card-stand">
+          <div className="loader__triangles"></div>
+            <svg viewBox="0 0 400 140" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="
+                  M40,80
+                  Q100,30 160,70
+                  Q200,100 240,70
+                  Q300,30 360,80
+                  L360,120
+                  Q200,160 40,120
+                  Z
+                "
+                fill="#000"
+              />
 
+              <path
+                d="
+                  M40,80
+                  Q100,30 160,70
+                  Q200,100 240,70
+                  Q300,30 360,80
+                "
+                fill="none"
+                stroke="#d4af37"
+                strokeWidth="1.5"
+                opacity="0.5"
+              />
 
-    <path
-      d="
-        M40,80
-        Q100,30 160,70
-        Q200,100 240,70
-        Q300,30 360,80
-      "
-      fill="none"
-      stroke="#d4af37"
-      strokeWidth="1.5"
-      opacity="0.5"
-    />
-
-
-    <path
-      d="
-        M180,105
-        Q200,120 220,105
-        M170,110
-        Q200,135 230,110
-      "
-      stroke="#d4af37"
-      strokeWidth="1.5"
-      fill="none"
-      opacity="0.6"
-    />
-
-  </svg>
-</div>
-
+              <path
+                d="
+                  M180,105
+                  Q200,120 220,105
+                  M170,110
+                  Q200,135 230,110
+                "
+                stroke="#d4af37"
+                strokeWidth="1.5"
+                fill="none"
+                opacity="0.6"
+              />
+            </svg>
+        </div>
       </div> 
     </div>
   );
