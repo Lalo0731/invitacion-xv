@@ -13,8 +13,8 @@ export default function LoaderScreen({ onEnter }) {
 
   return (
     <div className={`loader ${closing ? "loader--exit" : ""}`}>
-      <img
-        src="/images/fondo.png" alt="fondo" className="loader__bg-img"/>
+      {/* <img
+        src="/images/fondo.png" alt="fondo" className="loader__bg-img"/> */}
 
       <div className="loader__stars">
         {Array.from({ length: 70 }).map((_, i) => (
@@ -110,7 +110,7 @@ export default function LoaderScreen({ onEnter }) {
                   Q200,160 40,120
                   Z
                 "
-                fill="#000"
+                fill="#26050d"
               />
 
               <path
