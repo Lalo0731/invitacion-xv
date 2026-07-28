@@ -6,9 +6,9 @@ export default function LoaderScreen({ onEnter }) {
   const handleEnter = () =>{
     setClosing(true);
 
-    setTimeout(() => {
+    // setTimeout(() => {
       onEnter();
-    }, 900);
+    // }, 800);
   };
 
   return (

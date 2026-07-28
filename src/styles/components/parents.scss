@@ -1,0 +1,120 @@
+.parents {
+  position: relative;
+//   padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+
+//   background: radial-gradient(circle at center, #5a0f1f, #2a0a12);
+
+  /* ✨ BLUR REVEAL */
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  filter: blur(10px);
+
+
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 40px 25px;
+
+  border-radius: 20px;
+
+//   background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+
+  border: 1px solid rgba(212,175,55,0.5);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.6),
+    inset 0 0 20px rgba(255,215,0,0.05);
+
+  animation: parentsReveal 1s cubic-bezier(.22,1,.36,1) forwards;
+
+  @keyframes parentsReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(40px) scale(0.96);
+      filter: blur(12px);
+    }
+
+    60% {
+      opacity: 1;
+      transform: translateY(10px) scale(1.01);
+      filter: blur(4px);
+    }
+
+    100% {
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  &__container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__container::before,
+&__container::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d4af37, transparent);
+}
+
+&__container::before {
+  top: 20px;
+}
+
+&__container::after {
+  bottom: 20px;
+}
+
+  /* 🔥 TEXTO LETRA POR LETRA */
+  &__intro {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #f5dede;
+
+    span {
+      opacity: 0;
+      display: inline-block;
+      transform: translateY(10px);
+      animation: letterIn 0.4s ease forwards;
+    }
+  }
+
+  @keyframes letterIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* 💎 NOMBRES */
+  &__names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin: 25px 0;
+    color: #fff0f0;
+
+      span {
+    color: #ffd700;
+
+    text-shadow:
+      0 0 10px rgba(255,215,0,0.6),
+      0 0 20px rgba(255,215,0,0.3);
+  }
+  }
+
+  /* ✨ MENSAJE */
+  &__message {
+    font-size: 0.85rem;
+    color: #f5dede;
+    margin-top: 10px;
+  }
+}
