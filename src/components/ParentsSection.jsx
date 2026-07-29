@@ -1,8 +1,10 @@
 export default function ParentsSection() {
-  const text = "Con la bendición de mis padres";
+  const text = "Con el cariño de mi familia";
 
   return (
     <section className="parents">
+      <img src="/images/flower-top-left.png" className="parents__flower parents__flower--left" />
+      <img src="/images/flower-top-right.png" className="parents__flower parents__flower--right" />
       <div className="parents__container">
 
         <p className="parents__intro">
@@ -14,11 +16,16 @@ export default function ParentsSection() {
         </p>
 
         <h3 className="parents__names">
-          Juan Pérez <span>&</span> María López
+          Mi Familia 
         </h3>
 
         <p className="parents__message">
-          Te invitan a celebrar este momento tan especial
+          Hoy celebro un momento muy especial en mi vida,<br />
+          rodeada de las personas que han estado conmigo en cada paso,
+          brindándome amor, apoyo y alegría.<br /><br />
+
+          Gracias por ser parte de mi historia,<br />
+          por acompañarme y hacer este día aún más inolvidable 💖
         </p>
 
       </div>

@@ -5,6 +5,8 @@ import Countdown from './components/Countdown';
 import ParentsSection from './components/ParentsSection';
 import Petals from './components/Petals';
 import BackgroundEffects from './components/BackgroundEffects';
+import LocationSection from './components/LocationSection';
+import DressCode from './components/DressCode';
 
 function App() {
   const [entered, setEntered] = useState(false);
@@ -38,6 +40,8 @@ function App() {
             <Petals />
             <Countdown />
             <ParentsSection />
+            <LocationSection />
+            <DressCode />
           </div>
           </div>
         </>

@@ -1,0 +1,91 @@
+.location {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+
+  /* ✨ entrada suave */
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  filter: blur(10px);
+
+  animation: locationReveal 1s cubic-bezier(.22,1,.36,1) forwards;
+
+  @keyframes locationReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(40px) scale(0.96);
+      filter: blur(12px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(10px) scale(1.01);
+      filter: blur(4px);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  &__card {
+    width: min(360px, 90vw);
+    padding: 30px 20px 35px;
+    border-radius: 20px;
+
+    backdrop-filter: blur(6px);
+
+    border: 1px solid rgba(212,175,55,0.5);
+
+    box-shadow:
+      0 10px 40px rgba(0,0,0,0.6),
+      inset 0 0 20px rgba(255,215,0,0.05);
+
+    text-align: center;
+  }
+
+  &__title {
+    color: #ffd700;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+  }
+
+  &__place {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: #fff0f0;
+    margin-bottom: 5px;
+  }
+
+  &__address {
+    font-size: 0.85rem;
+    color: #f5dede;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  /* 🔘 BOTÓN */
+  &__btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 20px;
+
+    background: linear-gradient(145deg, #2a0006, #7a0010);
+    color: #ffd700;
+
+    border: 1px solid rgba(255,215,0,0.4);
+
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+
+    transition: all 0.3s ease;
+  }
+
+  &__btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.6);
+  }
+}
