@@ -1,7 +1,13 @@
 .location {
-  padding: 80px 20px;
+  position: relative;
+  padding: 100px 20px;
   display: flex;
   justify-content: center;
+  overflow: hidden;
+
+  // padding: 80px 20px;
+  // display: flex;
+  // justify-content: center;
 
   /* ✨ entrada suave */
   opacity: 0;
@@ -29,6 +35,8 @@
   }
 
   &__card {
+    position: relative;
+    z-index: 2;
     width: min(360px, 90vw);
     padding: 30px 20px 35px;
     border-radius: 20px;
@@ -43,6 +51,77 @@
 
     text-align: center;
   }
+
+  // nuevo
+    &__deco {
+    position: absolute;
+    width: 120px;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    filter:
+      brightness(0.9)
+      contrast(1.1)
+      drop-shadow(0 15px 30px rgba(0,0,0,0.6));
+  }
+
+  /* izquierda */
+  &__deco--left {
+    left: -24px;
+    top: 30%;
+
+    transform: translateX(-120px) rotate(-15deg) scale(0.9);
+    animation: decoLeft 1.2s cubic-bezier(.22,1,.36,1) forwards;
+    animation-delay: 0.3s;
+  }
+
+  /* derecha */
+  &__deco--right {
+    right: -9px;
+    top: 43%;
+
+    transform: translateX(120px) rotate(15deg) scale(0.9);
+    animation: decoRight 1.2s cubic-bezier(.22,1,.36,1) forwards;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes decoLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-150px) rotate(-20deg) scale(0.8);
+      filter: blur(10px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(10px) rotate(-10deg) scale(1.05);
+      filter: blur(4px);
+    }
+    100% {
+      opacity: 0.9;
+      transform: translateX(0) rotate(-12deg) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes decoRight {
+    0% {
+      opacity: 0;
+      transform: translateX(150px) rotate(20deg) scale(0.8);
+      filter: blur(10px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(-10px) rotate(10deg) scale(1.05);
+      filter: blur(4px);
+    }
+    100% {
+      opacity: 0.9;
+      transform: translateX(0) rotate(12deg) scale(1);
+      filter: blur(0);
+    }
+  }
+  // nuevo
 
   &__title {
     color: #ffd700;

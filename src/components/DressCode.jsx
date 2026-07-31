@@ -8,22 +8,36 @@ export default function DressCode() {
 
         {/* 👗 MUJERES */}
         <div className="dresscode__card dresscode__card--left">
+          <img 
+            src="/images/dress-woman.png" 
+            alt="Damas" 
+            className="dresscode__icon"
+          />
           <h3>Damas</h3>
           <p>
-            Vestido elegante<br />
-            Tonos neutros, dorado o negro<br />
+            Outfit formal–casual<br />
+            Vestidos o conjuntos elegantes<br />
+            Tonos neutros, pasteles o dorados<br />
+
             <span className="dresscode__note">
-              * Reservar el color rojo para la quinceañera
+              ✦ El color rojo está reservado para la quinceañera
             </span>
           </p>
         </div>
 
         {/* 🤵 HOMBRES */}
         <div className="dresscode__card dresscode__card--right">
+          <img 
+            src="/images/dress-man.png" 
+            alt="Caballeros" 
+            className="dresscode__icon"
+          />
           <h3>Caballeros</h3>
+
           <p>
-            Traje formal<br />
-            Colores oscuros o elegantes
+            Estilo formal–casual<br />
+            Camisa, saco o traje relajado<br />
+            Colores neutros u oscuros
           </p>
         </div>
 
