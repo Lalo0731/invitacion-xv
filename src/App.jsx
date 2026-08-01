@@ -7,6 +7,8 @@ import Petals from './components/Petals';
 import BackgroundEffects from './components/BackgroundEffects';
 import LocationSection from './components/LocationSection';
 import DressCode from './components/DressCode';
+import Gift from './components/Gift';
+import PhotoPreview from './components/PhotoPreview';
 
 function App() {
   const [entered, setEntered] = useState(false);
@@ -42,6 +44,8 @@ function App() {
             <ParentsSection />
             <LocationSection />
             <DressCode />
+            <Gift />
+            <PhotoPreview />
           </div>
           </div>
         </>

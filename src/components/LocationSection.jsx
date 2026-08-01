@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function LocationSection() {
+  const ref = useRef();
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="location">
+    <section ref={ref} className={`location ${visible ? "is-visible" : ""}`}>
 
       <img 
         src="/images/glass.png" 
@@ -15,7 +33,6 @@ export default function LocationSection() {
       />
 
       <div className="location__card">
-
         <h2 className="location__title">Ubicación</h2>
 
         <p className="location__place">
@@ -35,7 +52,6 @@ export default function LocationSection() {
         >
           Ver Ubicación
         </a>
-
       </div>
     </section>
   );

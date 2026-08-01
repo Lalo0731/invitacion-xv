@@ -60,6 +60,8 @@
     z-index: 1;
     pointer-events: none;
 
+    transition: all 1.2s cubic-bezier(.22,1,.36,1);
+
     filter:
       brightness(0.9)
       contrast(1.1)
@@ -72,8 +74,8 @@
     top: 30%;
 
     transform: translateX(-120px) rotate(-15deg) scale(0.9);
-    animation: decoLeft 1.2s cubic-bezier(.22,1,.36,1) forwards;
-    animation-delay: 0.3s;
+    // animation: decoLeft 1.2s cubic-bezier(.22,1,.36,1) forwards;
+    // animation-delay: 0.3s;
   }
 
   /* derecha */
@@ -82,45 +84,21 @@
     top: 43%;
 
     transform: translateX(120px) rotate(15deg) scale(0.9);
-    animation: decoRight 1.2s cubic-bezier(.22,1,.36,1) forwards;
-    animation-delay: 0.5s;
+    // animation: decoRight 1.2s cubic-bezier(.22,1,.36,1) forwards;
+    // animation-delay: 0.5s;
   }
+.location.is-visible &__deco--left {
+  opacity: 0.9;
+  transform: translateX(0) rotate(-12deg) scale(1);
+  transition-delay: 0.2s;
+}
 
-  @keyframes decoLeft {
-    0% {
-      opacity: 0;
-      transform: translateX(-150px) rotate(-20deg) scale(0.8);
-      filter: blur(10px);
-    }
-    60% {
-      opacity: 1;
-      transform: translateX(10px) rotate(-10deg) scale(1.05);
-      filter: blur(4px);
-    }
-    100% {
-      opacity: 0.9;
-      transform: translateX(0) rotate(-12deg) scale(1);
-      filter: blur(0);
-    }
-  }
+.location.is-visible &__deco--right {
+  opacity: 0.9;
+  transform: translateX(0) rotate(12deg) scale(1);
+  transition-delay: 0.4s;
+}
 
-  @keyframes decoRight {
-    0% {
-      opacity: 0;
-      transform: translateX(150px) rotate(20deg) scale(0.8);
-      filter: blur(10px);
-    }
-    60% {
-      opacity: 1;
-      transform: translateX(-10px) rotate(10deg) scale(1.05);
-      filter: blur(4px);
-    }
-    100% {
-      opacity: 0.9;
-      transform: translateX(0) rotate(12deg) scale(1);
-      filter: blur(0);
-    }
-  }
   // nuevo
 
   &__title {
