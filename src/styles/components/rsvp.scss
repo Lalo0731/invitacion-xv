@@ -1,0 +1,93 @@
+.rsvp {
+  padding: 2px 20px;
+  display: flex;
+  justify-content: center;
+
+  &__card {
+    width: min(380px, 92vw);
+
+    padding: 35px 25px;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(212,175,55,.35);
+
+    box-shadow:
+      0 15px 40px rgba(0,0,0,.55),
+      inset 0 0 20px rgba(212,175,55,.05);
+  }
+
+  &__icon{
+    font-size:3rem;
+    display:block;
+    margin-bottom:15px;
+
+    animation: floatMail 3s ease-in-out infinite;
+  }
+
+  &__title{
+    color:#ffd700;
+    letter-spacing:2px;
+    margin-bottom:18px;
+  }
+
+  &__text{
+    color:#f5dede;
+    font-size:.92rem;
+    line-height:1.7;
+  }
+
+  &__buttons{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:30px;
+  }
+
+  &__btn{
+    padding:14px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    border:none;
+
+    font-size:.9rem;
+
+    transition:.35s;
+  }
+
+  &__btn--primary{
+    background:linear-gradient(145deg,#6b0f1d,#8d1d33);
+    color:#ffd700;
+    border:1px solid rgba(212,175,55,.4);
+  }
+
+  &__btn--primary:hover{
+    transform:translateY(-3px);
+  }
+
+  &__btn--secondary{
+    background:transparent;
+    color:#f5dede;
+    border:1px solid rgba(255,255,255,.2);
+  }
+
+  &__btn--secondary:hover{
+    background:rgba(255,255,255,.05);
+  }
+}
+
+@keyframes floatMail{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-8px);
+  }
+}

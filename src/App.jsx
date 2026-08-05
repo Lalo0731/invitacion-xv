@@ -9,6 +9,7 @@ import LocationSection from './components/LocationSection';
 import DressCode from './components/DressCode';
 import Gift from './components/Gift';
 import PhotoPreview from './components/PhotoPreview';
+import RSVP from './components/RSVP';
 
 function App() {
   const [entered, setEntered] = useState(false);
@@ -46,6 +47,7 @@ function App() {
             <DressCode />
             <Gift />
             <PhotoPreview />
+            <RSVP />
           </div>
           </div>
         </>

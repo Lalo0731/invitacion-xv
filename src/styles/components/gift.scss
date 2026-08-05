@@ -38,7 +38,13 @@
      #3a0b14; /* vino oscuro */
 
   background-size:40px 40px;
-  border-radius:6px;
+  border-radius:8px;
+
+  border: 1.5px solid rgba(212,175,55,.35);
+
+  box-shadow:
+    0 12px 25px rgba(0,0,0,.45),
+    inset 0 0 12px rgba(212,175,55,.08);
 }
 
 /* =========================
