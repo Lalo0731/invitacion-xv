@@ -7,7 +7,7 @@ export default function Hero() {
 
       <div className="hero__content">
         <h2>MIS XV</h2>
-        <h1>Patas</h1>
+        <h1>Ámbar</h1>
       </div>
     </section>
   );

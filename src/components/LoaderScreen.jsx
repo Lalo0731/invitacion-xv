@@ -85,7 +85,7 @@ export default function LoaderScreen({ onEnter }) {
 
           <div className="loader__divider"></div>
 
-          <h2 className="loader__name">Patas</h2>
+          <h2 className="loader__name">Ámbar</h2>
 
           <p className="loader__text">
             TE INVITO A SER PARTE DE ESTE MOMENTO TAN ESPECIAL EN MI VIDA

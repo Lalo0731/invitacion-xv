@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <audio ref={audioRef} loop>
-        <source src="/music/song-xv.mp3" type="audio/mpeg" />
+        <source src="/music/bad_bunny.mp3" type="audio/mpeg" />
       </audio>
 
       {!entered ? (

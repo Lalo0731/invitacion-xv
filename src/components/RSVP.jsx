@@ -1,14 +1,22 @@
+
+
+
+
+
 import { useState, useEffect } from "react";
 import "../styles/components/rsvp.scss";
 
 export default function RSVP() {
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  // const [phoneConsent, setPhoneConsent] = useState(false);
   const [error, setError] = useState("");
   const [passes, setPasses] = useState(1);
 
   const [showModal, setShowModal] = useState(false);
   const [responseType, setResponseType] = useState(null); // "yes" | "no"
   const [validInvite, setValidInvite] = useState(false);
+  const [sending, setSending] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -30,28 +38,69 @@ export default function RSVP() {
     }
   }, []);
 
+  // const normalizedPhone = phone.replace(/[\s()-]/g, "");
+  // const phoneIsValid = /^(?:\+?52)?\d{10}$/.test(normalizedPhone);
+
+  const normalizedPhone = phone.replace(/\D/g, "");
+  const phoneIsValid = /^\d{10}$/.test(normalizedPhone);
+
   const handleConfirm = (attending) => {
     if (!name.trim()) {
       setError("Por favor escribe tu nombre ✨");
       return;
     }
 
+    if (!phoneIsValid) {
+      setError(
+        "Escribe un número de WhatsApp válido(10 dígitos)."
+      );
+      return;
+    }
+
+    // if (attending && !phoneConsent) {
+    //   setError(
+    //     "Acepta el aviso del recordatorio por WhatsApp para continuar."
+    //   );
+    //   return;
+    // }
+
+    setError("");
+    setSending(true);
+
     const data = new URLSearchParams();
     data.append("name", name);
     data.append("attending", attending);
     data.append("passes", passes);
+    data.append("phone", normalizedPhone);
+    // data.append("phoneConsent", String(phoneConsent));
 
-    fetch("https://script.google.com/macros/s/AKfycbyq_fUMO5TgWdPU1B2s7SdVlf9ZywLAkhrf8k-aq_qQifne3oRwk3Bxb-Ety8QwbRupcA/exec", {
+    fetch("https://script.google.com/macros/s/AKfycby_j0tCLIWenQZO60BQ_KWi4tJejCZoaT7mEYOcJkEsPKOjA9N5qQoUNqSg9oAPb-cGoQ/exec", {
       method: "POST",
       body: data,
     })
-    .then(() => {
+    .then(response => response.text())
+    .then(result => {
+      if (result.includes("DUPLICATE_PHONE")) {
+        setError("Este número de WhatsApp ya fue registrado. Verifica el número e intenta con el correcto.");
+        return;
+      }
+
+      if (!result.includes("OK")) {
+        throw new Error("No se pudo confirmar el registro.");
+      }
+      setName("");
+      setPhone("");
+      setError("");
+
       setResponseType(attending ? "yes" : "no");
       setShowModal(true);
     })
     .catch(() => {
       setResponseType("error");
       setShowModal(true);
+    })
+    .finally(() => {
+        setSending(false);
     });
   };
 
@@ -84,7 +133,34 @@ export default function RSVP() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="rsvp__input"
+          disabled={!validInvite || sending}
         />
+
+        <input
+          type="tel"
+          inputMode="tel"
+          autoComplete="tel"
+          maxLength={10}
+          placeholder="Tu número de WhatsApp (10 dígitos)"
+          value={phone}
+          onChange={(e) => {
+            // Permite números, espacios, +, paréntesis y guiones.
+            const value = e.target.value
+              .replace(/[^\d+\s()-]/g, "")
+              .slice(0, 18);
+
+            setPhone(value);
+            setError("");
+          }}
+          className="rsvp__input"
+          disabled={!validInvite || sending}
+        />
+        {phoneIsValid && (
+          <p className="rsvp__hint">
+            ✨ Un día antes de la celebración te enviaremos un
+            recordatorio por WhatsApp. ¡Esperamos verte ahí! 💖
+          </p>
+        )}
 
         {error && <p className="rsvp__error">{error}</p>}
 

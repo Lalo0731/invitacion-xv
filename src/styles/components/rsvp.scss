@@ -64,6 +64,40 @@
     }
   }
 
+    &__hint {
+    color: #f5dede;
+    font-size: 0.72rem;
+    line-height: 1.5;
+    text-align: left;
+    margin: 7px 2px 12px;
+    opacity: 0.85;
+    animation: fadeIn 0.35s ease;
+  }
+
+  // &__consent {
+  //   display: flex;
+  //   align-items: flex-start;
+  //   gap: 9px;
+  //   margin-top: 15px;
+  //   color: #f5dede;
+  //   font-size: 0.75rem;
+  //   line-height: 1.5;
+  //   text-align: left;
+  //   cursor: pointer;
+
+  //   input {
+  //     margin-top: 3px;
+  //     accent-color: #d4af37;
+  //     flex-shrink: 0;
+  //   }
+  // }
+
+  &__btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
   &__error {
     color: #ff6b6b;
     font-size: 0.75rem;

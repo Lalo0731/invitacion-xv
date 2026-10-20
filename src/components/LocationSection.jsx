@@ -36,7 +36,7 @@ export default function LocationSection() {
         <h2 className="location__title">Ubicación</h2>
 
         <p className="location__place">
-          Salón flamingos
+          Salón Flamingos
         </p>
 
         <p className="location__address">
