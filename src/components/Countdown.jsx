@@ -37,7 +37,7 @@ export default function Countdown() {
       </div>
 
       <p className="countdown__date">
-        09 de Enero 2027 · 6:00 PM
+        09 de Enero 2027 · 8:00 PM
       </p>
     </section>
   );
