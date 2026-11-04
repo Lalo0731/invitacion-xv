@@ -118,7 +118,7 @@ export default function RSVP() {
         <p className="rsvp__text">
           Tu presencia hará de este día un momento aún más especial.
           Por favor confirma tu asistencia antes del
-          <strong> 10 de septiembre.</strong>
+          <strong> 15 de Diciembre.</strong>
         </p>
 
         {!validInvite && (
